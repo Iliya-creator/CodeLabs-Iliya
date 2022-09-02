@@ -1,6 +1,5 @@
 function makeCounter() {
     let count = 0;
-  
     return function() {
       return count++;
     };
@@ -12,5 +11,5 @@ function makeCounter() {
   alert( counter() ); // 0
   alert( counter() ); // 1
   
-  alert( counter2() ); // ?
-  alert( counter2() ); // ?
+  alert( counter2() ); // 0
+  alert( counter2() ); // 1
