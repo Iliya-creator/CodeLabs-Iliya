@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const original = 'iliya';
+        const clone    = 'ILIYA';
+
+        console.groupCollapsed('String');
+            console.log(original == 'iliya'); //true
+            console.log(original == clone); //false
+            console.log(original == clone.toLowerCase()); //true
+        console.groupEnd();
+
+        const num1 = 10;
+        const num2 = '10';
+
+        console.groupCollapsed('Numbers');
+            console.log(num1 == num2); //true
+            console.log(num1 === num2); //false
+            console.log(num1 != num2); //false
+            console.log(num1 !== num2); //true
+        console.groupEnd();
+
+        let what; //undefined
+        let thing = null;
+
+        console.groupCollapsed('Booleans');
+            console.log(Boolean(what)); //false
+            console.log(original == clone); //false
+            console.log(original == clone.toLowerCase()); //true
+        console.groupEnd();
+
+    </script>
+</body>
+</html>

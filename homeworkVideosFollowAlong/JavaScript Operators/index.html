@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a = 10;
+      let b = 3;
+      let c = 15;
+
+      let d = "5";
+      let e = "my name ";
+      let f = "is Iliya";
+
+      console.groupCollapsed('Addition');
+        console.log(a + b); //13
+        console.log(a + c); //25
+        console.log(e + " " + f);
+      console.groupEnd();
+
+      console.groupCollapsed('Multiplication');
+        console.log(a * 3); //30
+        console.log(a * b); //30
+        console.log(b * c); //45
+      console.groupEnd();
+
+
+      console.group('Incrementing');
+        console.log(a + 1);
+        console.log(a++);
+        console.log(c += a);
+        console.log(e + f);
+      console.groupEnd();
+    </script>
+  </body>
+</html>
