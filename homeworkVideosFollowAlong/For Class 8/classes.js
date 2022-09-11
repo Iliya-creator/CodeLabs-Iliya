@@ -3,17 +3,26 @@ class User{
     //instance properties -> data
     username = ''
     // constructor -> that is executed when an instance is created
-    constructor(){
+    constructor(newUsername){
+        this.username = newUsername;
         console.log("Instance was created!");
     }
     //methods -> define logic to manipulate data
+    printMyName(){
+        console.log(`My name is ${this.username}`);
+    }
 }
 
 
 
-new User();
+let user = new User("John123");
+console.log(user);
+user.printMyName();
 
 
+let userTwo = new User("Amy123");
+console.log(userTwo);
+userTwo.printMyName();
 
 
 
