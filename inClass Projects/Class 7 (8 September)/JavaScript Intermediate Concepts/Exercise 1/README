@@ -1,0 +1,20 @@
+Exercise #1: Closures - Check number
+Create a folder in class-7 called exercise-1. Create the necessary files in this folder to solve the exercise.
+
+The function sayHi uses an external variable name. When the function runs, which value is it going to use?
+
+function numberGenerator() {
+  // Local “free” variable that ends up within the closure
+  let num = 1;
+  function checkNumber() {
+    console.log(num);
+  }
+  num++;
+  return checkNumber;
+}
+
+var number = numberGenerator();
+number();
+What will number() log to the console?
+
+You have solved this exercise when you understand the solution.
