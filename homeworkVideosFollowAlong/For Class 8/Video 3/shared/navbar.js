@@ -1,10 +1,15 @@
 import Home from "../pages/home.js";
 import Settings from "../pages/settings.js";
+import { userService } from "../user/user.service.js";
 
 export default class Navbar {
   constructor() {
     this.render();
     this.addEventlisteners();
+    this.changeUsername(userService.user.username);
+    userService.userObsv.subscribe((data)=>{
+        this.changeUsername(data);
+    })
   }
   render(){
     let appElem = document.getElementById("app");
@@ -23,6 +28,9 @@ export default class Navbar {
         </li>
         <li class="nav-item" id='settings' style='cursor:pointer'>
           <a class="nav-link" >Settings</a>
+        </li>
+        <li class="nav-item" id='settings' style='cursor:pointer'>
+          <div id='user'></div>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -71,5 +79,10 @@ export default class Navbar {
         new Settings();
 
     })
+  }
+
+  changeUsername(username){
+    let userElem = document.getElementById('user');
+    userElem.innerText = `Welcome, ${username}`
   }
 }
