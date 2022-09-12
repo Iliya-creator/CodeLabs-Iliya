@@ -6,8 +6,9 @@ export default class Home{
     //render elements onto the page
     render(){
         let appElement = document.getElementById('app');
-        appElement.innerHTML += `
+
+        appElement.insertAdjacentHTML('beforeend',`
         <h1 class="text-center">Social Media Page</h1>
-        `
+        `);
     }
 }

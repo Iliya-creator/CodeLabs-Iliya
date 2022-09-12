@@ -6,8 +6,9 @@ export default class Settings{
     
     render(){
         let appElement = document.getElementById('app');
-        appElement.innerHTML += `
+
+        appElement.insertAdjacentHTML('beforeend',`
             <h1 class='text-center'>Settings</h1>
-        `
+        `);
     }
 }

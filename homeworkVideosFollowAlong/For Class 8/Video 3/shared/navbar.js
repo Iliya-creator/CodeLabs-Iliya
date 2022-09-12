@@ -1,11 +1,15 @@
+import Home from "../pages/home.js";
+import Settings from "../pages/settings.js";
+
 export default class Navbar {
   constructor() {
     this.render();
+    this.addEventlisteners();
   }
-
-  render() {
+  render(){
     let appElem = document.getElementById("app");
-    appElem.innerHTML += `
+
+    appElem.insertAdjacentHTML("beforeend",`
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
@@ -14,11 +18,11 @@ export default class Navbar {
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <li class="nav-item" id='home' style='cursor:pointer'>
+          <a class="nav-link active" aria-current="page" >Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+        <li class="nav-item" id='settings' style='cursor:pointer'>
+          <a class="nav-link" >Settings</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -42,6 +46,30 @@ export default class Navbar {
     </div>
   </div>
 </nav>
-`;
+`);
+  }
+  addEventlisteners(){
+    //declare variables/access elements
+    let homeElem = document.getElementById('home');
+    let settingsElem = document.getElementById('settings');
+    let appElem = document.getElementById('app');
+    //Attach event listeners
+    homeElem.addEventListener('click', ()=>{
+        //clear the app element
+        appElem.innerHTML = '';
+        //Reinitialize the navbar and home
+        new Navbar();
+        new Home();
+
+    })
+
+    settingsElem.addEventListener('click', ()=>{
+        //clear the app element
+        appElem.innerHTML = '';
+        //Reinitialize the navbar and home
+        new Navbar();
+        new Settings();
+
+    })
   }
 }
