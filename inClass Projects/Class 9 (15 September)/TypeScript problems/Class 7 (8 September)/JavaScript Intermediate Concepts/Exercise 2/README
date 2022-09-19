@@ -1,0 +1,16 @@
+Exercise #2: Closures - Hello world!
+In class-7, create a folder called exercise-2. Create the necessary files in this folder to solve the exercise.
+
+function sayHello() {
+  let say = function () {
+    console.log(hello);
+  };
+  // Local variable that ends up within the closure
+  let hello = "Hello, world!";
+  return say;
+}
+var sayHelloClosure = sayHello();
+sayHelloClosure();
+What will sayHelloClosure() log to the console?
+
+You have solved this exercise when you understand the solution.
